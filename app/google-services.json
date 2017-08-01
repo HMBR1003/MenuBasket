@@ -1,0 +1,239 @@
+{
+  "project_info": {
+    "project_number": "923425871569",
+    "firebase_url": "https://baseballbaedal.firebaseio.com",
+    "project_id": "baseballbaedal",
+    "storage_bucket": "baseballbaedal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923425871569:android:b22ab42273a4d36c",
+        "android_client_info": {
+          "package_name": "org.baseballbaedal.baseballbaedal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923425871569-oo139bof40fe7g30ijirobmu1miat5dp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.baseballbaedal.baseballbaedal",
+            "certificate_hash": "6cdd9d3788d3913b8ca52121c272b92d6d89cc1b"
+          }
+        },
+        {
+          "client_id": "923425871569-eqhmb3lkdcbikj7259jvkkhmc97igcnj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.baseballbaedal.baseballbaedal",
+            "certificate_hash": "9a6042ebb89e584d11d538459a4f604d35f4a789"
+          }
+        },
+        {
+          "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFNIrfLOU9bOIJgigiTwFXFN5IW6069t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923425871569:android:119326abdddbb2e3",
+        "android_client_info": {
+          "package_name": "org.baseballbaedal.baseballmanage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923425871569-u79ukk01prpgu9sdtkqk3mhlq6jmnbvk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.baseballbaedal.baseballmanage",
+            "certificate_hash": "6cdd9d3788d3913b8ca52121c272b92d6d89cc1b"
+          }
+        },
+        {
+          "client_id": "923425871569-7cgiri7h6iete049h79sm1hlvhc165us.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.baseballbaedal.baseballmanage",
+            "certificate_hash": "9a6042ebb89e584d11d538459a4f604d35f4a789"
+          }
+        },
+        {
+          "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFNIrfLOU9bOIJgigiTwFXFN5IW6069t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923425871569:android:223280e6a7e50c35",
+        "android_client_info": {
+          "package_name": "com.example.qwexo.rest_adadadadadad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFNIrfLOU9bOIJgigiTwFXFN5IW6069t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923425871569:android:8e3f86a1b429bf2e",
+        "android_client_info": {
+          "package_name": "com.example.qwexo.weather_interface"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFNIrfLOU9bOIJgigiTwFXFN5IW6069t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923425871569:android:12ad948901f2b907",
+        "android_client_info": {
+          "package_name": "com.example.qwexo.foodlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFNIrfLOU9bOIJgigiTwFXFN5IW6069t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923425871569:android:ed14581b6d4a2330",
+        "android_client_info": {
+          "package_name": "com.example.qwexo.menubasket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923425871569-vqi9qeuhlldersvjuo84ief9iepmukf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFNIrfLOU9bOIJgigiTwFXFN5IW6069t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
