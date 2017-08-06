@@ -3,6 +3,7 @@ package com.example.qwexo.menubasket;
 import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,7 +20,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class ImageGlide {
     StorageReference storageReference;
-    public ImageView getImage(final Context context, String userID, final String menu, final ImageView view){
+    public void getImage(final Context context, String userID, final String menu, final ImageView view){
         storageReference = FirebaseStorage.getInstance().getReference().child("market").child(userID).child("menu").child(menu + ".jpg");
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
@@ -32,8 +33,8 @@ public class ImageGlide {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(context, "서버 연결 실패", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
             }
         });
-        return view;
     }
 }

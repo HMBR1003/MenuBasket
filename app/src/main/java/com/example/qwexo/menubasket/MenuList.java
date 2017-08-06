@@ -17,4 +17,13 @@ public class MenuList {
     public String option4Price = "0";
     public String option5Name;
     public String option5Price = "0";
+    public String menuKey;
+    public String menuExplain;
+    public boolean isMain;
+    public long aseq;
+    public String aTime;
+
+    public MenuList(){
+        menuKey = "";
+    }
 }

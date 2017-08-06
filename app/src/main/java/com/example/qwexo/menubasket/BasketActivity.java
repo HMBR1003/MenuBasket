@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.qwexo.menubasket.databinding.ActivityBasketBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -71,12 +72,16 @@ public class BasketActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(true);
 
-        shared = getSharedPreferences("menu", MODE_PRIVATE);
+        shared = getSharedPreferences("basket", MODE_PRIVATE);
         editor = shared.edit();
+        editor.putString("marketId", "slwVsecqtTO3RDjzPxBWrFekbEd2");
+        editor.putString("menu0", "-KpEcsuBIg-8VmoqGl1f");
+        editor.putString("menu1", "-KpEcsuBIg-8VmoqGl1f");
+        editor.commit();
 
-        userID = shared.getString("user2", "");
+        userID = shared.getString("marketId", "");
         for (int i = 0; i < BASKET_MAX_LENGTH; i++) {
-            menu[i] = shared.getString("menu" + i, "");
+            menu[i] = shared.getString("menu" + i, null);
         }
 
         fireDB = FirebaseDatabase.getInstance().getReference().child("market").child(userID).child("menu");
@@ -98,11 +103,38 @@ public class BasketActivity extends AppCompatActivity {
 
             }
         });
+
+
+//        fireDB = FirebaseDatabase.getInstance().getReference().child("market").child(userID).child("menu");
+//        fireDB.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                int count = 0;
+//                for (DataSnapshot data : dataSnapshot.getChildren()) {
+//                    menuList[count] = data.getValue(MenuList.class);
+//                    menuList[count].menuKey = data.getKey();
+//                    count++;
+//                }
+//
+//                for(int i=0; menu[i]!=null; i++){
+//                    for(int j=0; j<count; j++){
+//                        if(menu[i]==menuList[j].menuKey){
+//                            basketCreate(menuList[j]);
+//                        }
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 return true;
@@ -208,22 +240,22 @@ public class BasketActivity extends AppCompatActivity {
                     + menuList.option3Name + "(+" + menuList.option3Price + "원)\n"
                     + menuList.option4Name + "(+" + menuList.option4Price + "원)\n"
                     + menuList.option5Name + "(+" + menuList.option5Price + "원)");
-        }else if(menuList.option4Name != null){
+        } else if (menuList.option4Name != null) {
             optionLayout[basketCount].setVisibility(View.VISIBLE);
             optionText[basketCount].setText(menuList.option1Name + "(+" + menuList.option1Price + "원)\n"
                     + menuList.option2Name + "(+" + menuList.option2Price + "원)\n"
                     + menuList.option3Name + "(+" + menuList.option3Price + "원)\n"
                     + menuList.option4Name + "(+" + menuList.option4Price + "원)");
-        }else if(menuList.option3Name != null){
+        } else if (menuList.option3Name != null) {
             optionLayout[basketCount].setVisibility(View.VISIBLE);
             optionText[basketCount].setText(menuList.option1Name + "(+" + menuList.option1Price + "원)\n"
                     + menuList.option2Name + "(+" + menuList.option2Price + "원)\n"
                     + menuList.option3Name + "(+" + menuList.option3Price + "원)");
-        }else if(menuList.option2Name != null){
+        } else if (menuList.option2Name != null) {
             optionLayout[basketCount].setVisibility(View.VISIBLE);
             optionText[basketCount].setText(menuList.option1Name + "(+" + menuList.option1Price + "원)\n"
                     + menuList.option2Name + "(+" + menuList.option2Price + "원)");
-        }else if(menuList.option1Name != null){
+        } else if (menuList.option1Name != null) {
             optionLayout[basketCount].setVisibility(View.VISIBLE);
             optionText[basketCount].setText(menuList.option1Name + "(+" + menuList.option1Price + "원)");
         }
