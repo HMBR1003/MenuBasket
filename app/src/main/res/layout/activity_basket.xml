@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sl="http://schemas.android.com/tools">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffffff"
@@ -9,43 +12,23 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            app:theme="@style/ToolbarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
-
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/ToolbarStyle"></android.support.v7.widget.Toolbar>
 
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <LinearLayout
                 android:id="@+id/basketLayout"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50sp"
-                    android:gravity="center_vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textSize="20sp"
-                        android:text="음식점 이름"/>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="0dp"
-                    android:background="#f000" />
 
             </LinearLayout>
         </ScrollView>
@@ -56,35 +39,7 @@
             android:layout_margin="0dp"
             android:background="#f000" />
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:gravity="center"-->
-            <!--android:orientation="horizontal">-->
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center"-->
-                <!--android:text="총 주문금액 : "-->
-                <!--android:textSize="25sp" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/hapPriceText"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="20dp"-->
-                <!--android:gravity="center"-->
-                <!--android:text="0"-->
-                <!--android:textSize="25sp" />-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="40dp"-->
-                <!--android:gravity="center"-->
-                <!--android:text="원"-->
-                <!--android:textSize="25sp" />-->
-        <!--</LinearLayout>-->
 
         <Button
             android:id="@+id/orderButton"

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:sl="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--android:weightSum="1">-->
+        <!--android:focusable="true"-->
+        <!--android:focusableInTouchMode="true"-->
+
+        <com.ssomai.android.scalablelayout.ScalableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            sl:scale_base_height="1200"
+            sl:scale_base_width="1080">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/black_teduri"
+                sl:scale_height="1100"
+                sl:scale_width="950">
+
+                <com.ssomai.android.scalablelayout.ScalableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    sl:scale_base_height="1250"
+                    sl:scale_base_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/closeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/close"
+                        sl:scale_height="120"
+                        sl:scale_left="960"
+                        sl:scale_width="120" />
+
+                    <TextView
+                        android:id="@+id/menuName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/black_teduri"
+                        android:gravity="center"
+                        android:text="menuName"
+                        android:textColor="#aa0000ff"
+                        sl:scale_height="140"
+                        sl:scale_textsize="69"
+                        sl:scale_width="1080" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#000"
+                        sl:scale_height="2"
+                        sl:scale_top="140"
+                        sl:scale_width="1080" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/aa"
+                        sl:scale_height="650"
+                        sl:scale_top="180"
+                        sl:scale_width="650" />
+
+                    <TextView
+                        android:id="@+id/menuPriceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="menuPriceText"
+                        sl:scale_height="140"
+                        sl:scale_textsize="69"
+                        sl:scale_top="830"
+                        sl:scale_width="1080" />
+                    <LinearLayout
+                        android:id="@+id/optionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        sl:scale_height="500"
+                        sl:scale_top="970"
+                        sl:scale_width="1080">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="선택옵션"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/optionText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="0.03"
+                            android:gravity="center"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        sl:scale_height="500"
+                        sl:scale_top="970"
+                        sl:scale_width="1080">
+
+                        <com.ssomai.android.scalablelayout.ScalableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            sl:scale_base_height="400"
+                            sl:scale_base_width="1080">
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#000"
+                            sl:scale_height="2"
+                            sl:scale_top="970"
+                            sl:scale_width="1080" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="수량 : "
+                            sl:scale_height="130"
+                            sl:scale_left="30"
+                            sl:scale_textsize="54"
+                            sl:scale_top="970"
+                            sl:scale_width="800" />
+
+                        <Button
+                            android:id="@+id/minusButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            sl:scale_height="130"
+                            sl:scale_left="690"
+                            sl:scale_textsize="54"
+                            sl:scale_top="970"
+                            sl:scale_width="120" />
+
+
+                        <Button
+                            android:id="@+id/plusButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="+"
+                            sl:scale_height="130"
+                            sl:scale_left="930"
+                            sl:scale_textsize="54"
+                            sl:scale_top="970"
+                            sl:scale_width="120" />
+
+                        <TextView
+                            android:id="@+id/countEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1"
+                            sl:scale_height="130"
+                            sl:scale_left="810"
+                            sl:scale_textsize="54"
+                            sl:scale_top="970"
+                            sl:scale_width="120" />
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#000"
+                            sl:scale_height="2"
+                            sl:scale_top="1100"
+                            sl:scale_width="1250" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="소계 : "
+                            sl:scale_height="150"
+                            sl:scale_left="30"
+                            sl:scale_textsize="65"
+                            sl:scale_top="1100"
+                            sl:scale_width="800" />
+
+                        <TextView
+                            android:id="@+id/minHapPriceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|end"
+                            android:text="minHapPriceText"
+                            sl:scale_height="150"
+                            sl:scale_left="250"
+                            sl:scale_textsize="65"
+                            sl:scale_top="1100"
+                            sl:scale_width="800" />
+                        </com.ssomai.android.scalablelayout.ScalableLayout>
+                    </LinearLayout>
+
+                </com.ssomai.android.scalablelayout.ScalableLayout>
+            </LinearLayout>
+
+        </com.ssomai.android.scalablelayout.ScalableLayout>
+
+
+    </LinearLayout>
+</layout>

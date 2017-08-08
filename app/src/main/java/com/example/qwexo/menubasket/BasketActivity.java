@@ -42,8 +42,10 @@ public class BasketActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     DatabaseReference fireDB;
 
+    ViewGroup headerView;
     ViewGroup footerView;
     TextView hapPriceText;
+    TextView marketName;
     ViewGroup[] view = new ViewGroup[BASKET_MAX_LENGTH];
     TextView[] tagText = new TextView[BASKET_MAX_LENGTH];
     ImageButton[] closeButton = new ImageButton[BASKET_MAX_LENGTH];
@@ -74,6 +76,7 @@ public class BasketActivity extends AppCompatActivity {
     LayoutInflater inflater;
     LinearLayout ll;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,8 +91,9 @@ public class BasketActivity extends AppCompatActivity {
 
         shared = getSharedPreferences("basket", MODE_PRIVATE);
         editor = shared.edit();
-        editor.putString("marketId", "slwVsecqtTO3RDjzPxBWrFekbEd2");
 
+        editor.putString("marketId", "slwVsecqtTO3RDjzPxBWrFekbEd2");
+        editor.putString("marketName","치킨치킨");
         editor.putString("menuKey0", "-KpEcsuBIg-8VmoqGl1f");
         editor.putInt("menuAmount0", 2);
         editor.putBoolean("option1checked0", false);
@@ -122,7 +126,14 @@ public class BasketActivity extends AppCompatActivity {
         ll = new LinearLayout(this);
         inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         footerView = (ViewGroup) inflater.inflate(R.layout.basket_end_layout, ll, false);
+
+        ll = new LinearLayout(this);
+        inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        headerView = (ViewGroup) inflater.inflate(R.layout.basket_start_layout, ll, false);
+
         hapPriceText = (TextView)footerView.findViewById(R.id.hapPriceText);
+        marketName = (TextView)headerView.findViewById(R.id.marketName);
+        marketName.setText(shared.getString("marketName", null));
 
         fireDB = FirebaseDatabase.getInstance().getReference().child("market").child(userID).child("menu");
         fireDB.addValueEventListener(new ValueEventListener() {
@@ -134,6 +145,9 @@ public class BasketActivity extends AppCompatActivity {
                     menuList[count].menuKey = data.getKey();
                     count++;
                 }
+
+                basketBinding.basketLayout.addView(headerView);
+
 
                 for (int i = 0; menuKey[i] != null; i++) {
                     for (int j = 0; j < count; j++) {
@@ -204,7 +218,6 @@ public class BasketActivity extends AppCompatActivity {
                         int mPrice = Integer.parseInt(minHapPriceText[num].getText().toString().replaceAll(",", ""));
                         int totalPrice = Integer.parseInt(hapPriceText.getText().toString().replaceAll(",", "").replaceAll("원","")) - mPrice;
                         hapPriceText.setText(numToWon(totalPrice)+"원");
-
                         shared.edit().remove("menuKey" + num).apply();
                         shared.edit().remove("menuAmount" + num).apply();
                         shared.edit().remove("option1checked" + num).apply();
@@ -212,6 +225,7 @@ public class BasketActivity extends AppCompatActivity {
                         shared.edit().remove("option3checked" + num).apply();
                         shared.edit().remove("option4checked" + num).apply();
                         shared.edit().remove("option5checked" + num).apply();
+
 
                         Toast.makeText(BasketActivity.this, "삭제하였습니다.", Toast.LENGTH_SHORT).show();
                     }
@@ -306,24 +320,24 @@ public class BasketActivity extends AppCompatActivity {
         optionText[basketCount] = (TextView) view[basketCount].findViewById(R.id.optionText);   //옵션텍스트
         optionLayout[basketCount] = (LinearLayout) view[basketCount].findViewById(R.id.optionLayout);   //옵션레이아웃
 
-        if (option1 || option2 || option3 || option4 || option5) {
-            optionLayout[basketCount].setVisibility(View.VISIBLE);
-            if (option1) {
-                optionText[basketCount].append(menuList.option1Name + "(+" + numToWon(Integer.parseInt(menuList.option1Price)) + "원)\n");
-            }
-            if (option2) {
-                optionText[basketCount].append(menuList.option2Name + "(+" + numToWon(Integer.parseInt(menuList.option2Price)) + "원)\n");
-            }
-            if (option3) {
-                optionText[basketCount].append(menuList.option3Name + "(+" + numToWon(Integer.parseInt(menuList.option3Price)) + "원)\n");
-            }
-            if (option4) {
-                optionText[basketCount].append(menuList.option4Name + "(+" + numToWon(Integer.parseInt(menuList.option4Price)) + "원)\n");
-            }
-            if (option5) {
-                optionText[basketCount].append(menuList.option5Name + "(+" + numToWon(Integer.parseInt(menuList.option5Price)) + "원)\n");
-            }
-        }
+//        if (option1 || option2 || option3 || option4 || option5) {
+//            optionLayout[basketCount].setVisibility(View.VISIBLE);
+//            if (option1) {
+//                optionText[basketCount].append(menuList.option1Name + "(+" + numToWon(Integer.parseInt(menuList.option1Price)) + "원)\n");
+//            }
+//            if (option2) {
+//                optionText[basketCount].append(menuList.option2Name + "(+" + numToWon(Integer.parseInt(menuList.option2Price)) + "원)\n");
+//            }
+//            if (option3) {
+//                optionText[basketCount].append(menuList.option3Name + "(+" + numToWon(Integer.parseInt(menuList.option3Price)) + "원)\n");
+//            }
+//            if (option4) {
+//                optionText[basketCount].append(menuList.option4Name + "(+" + numToWon(Integer.parseInt(menuList.option4Price)) + "원)\n");
+//            }
+//            if (option5) {
+//                optionText[basketCount].append(menuList.option5Name + "(+" + numToWon(Integer.parseInt(menuList.option5Price)) + "원)\n");
+//            }
+//        }
 
         basketBinding.basketLayout.addView(view[basketCount]);
 
